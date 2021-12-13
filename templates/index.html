@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather Prediction</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+	.btn{
+		background: linear-gradient(to bottom right, #8545da, #33ccff);
+		color: white;
+	}
+	.fform{
+		background-color: #eee;
+		padding: 50px;
+		margin-top: 70px;
+
+	}
+	.heading{
+		background-color: #28015c;
+		padding: 10px;
+		color: white;
+		text-align: center;
+	}
+	.top {
+		position: relative;
+		margin-top:150px;
+	}
+	body {
+		background: url('https://www.pixelstalk.net/wp-content/uploads/2016/07/Download-Free-Weather-Background.jpg');
+		background-size: cover;
+	}
+	
+</style>
+</head>
+<body style="background-repeat: no-repeat; background-size: 100% 100%; background-attachment: fixed;">
+	<div class="col-lg-10 col-lg-offset-3">
+		<div class="container">
+			<div class="col-lg-6 top">
+				<div class="col-lg-12 heading">
+					<h3><b>Weather Prediction</b></h3>
+				</div>
+				<form class="form fform" action="/prediction" method="post">
+
+					<div class="form-group">
+						<input type="number" name="Temp_C" placeholder="Enter temperature (C)" class="form-control" steps=0.000001>
+					</div>
+
+					<div class="form-group">
+						<input type="number" name="DewPointTemp_C" placeholder="Enter dew point temperature (C)" class="form-control" steps=0.000001>
+					</div>
+
+					<div class="form-group">
+						<input type="number" name="RelHum" placeholder="Enter relative humidity" class="form-control" steps=0.000001>
+					</div>
+
+					<div class="form-group">
+						<input type="number" name="WindSpeed_km" placeholder="Enter wind speed (Km/h)" class="form-control" steps=0.000001>
+					</div>
+
+					<div class="form-group">
+						<input type="number" name="Visibility_km" placeholder="Enter visibility" class="form-control" steps=0.000001>
+					</div>
+
+					<div class="form-group">
+						<input type="number" name="press_kPa" placeholder="Enter presskPa" class="form-control" steps=0.000001>
+					</div>
+
+					<div class="form-group">
+						<input type="submit" name="submit" value="Submit" class="btn btn-md">
+					</div>
+
+					<div class="form-group">
+						<b> Prediction: {{ api_output }} </b>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
